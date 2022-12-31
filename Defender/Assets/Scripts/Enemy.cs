@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
         
     }
 
+    // Called every frame
     void Update()
     {
         /*
@@ -24,6 +25,9 @@ public class Enemy : MonoBehaviour
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime, speed);
     }
 
+    /*
+    * Deal damage to the specific enemy game object
+    */
     public void takeDamage(float damage) {
         health -= damage;
 
