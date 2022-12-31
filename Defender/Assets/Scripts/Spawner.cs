@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     {
         int randomIndex = Random.Range(0, myObjects.Length);
         Vector3 randomSpawnPosition = new Vector3(Random.Range(-30, 30), Random.Range(5, 25), Random.Range(30, 50));
-        Instantiate(myObjects[randomIndex], randomSpawnPosition, Quaternion.identity);
+        Instantiate(myObjects[randomIndex], randomSpawnPosition, myObjects[randomIndex].transform.rotation);
     }
 }
 
