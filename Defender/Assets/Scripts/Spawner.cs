@@ -6,18 +6,21 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField] float start = 0.0f;
+    [SerializeField] float repete = 1.0f;
     public GameObject[] myObjects;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-       if(Input.GetKeyDown(KeyCode.Space))
-       {
+        InvokeRepeating("SpawnEnemy", start, repete);
+    }
+
+    void SpawnEnemy()
+    {
         int randomIndex = Random.Range(0, myObjects.Length);
-        Vector3 randomSpawnPosition = new Vector3(Random.Range(-10, 11), 5, Random.Range(-10, 11));
-
+        Vector3 randomSpawnPosition = new Vector3(Random.Range(-30, 30), Random.Range(5, 25), Random.Range(30, 50));
         Instantiate(myObjects[randomIndex], randomSpawnPosition, Quaternion.identity);
-       }
-
     }
 }
+
+
