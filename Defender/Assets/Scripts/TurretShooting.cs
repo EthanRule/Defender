@@ -37,7 +37,7 @@ public class TurretShooting : MonoBehaviour
         /*
         * If the component that was collided was an enemy, deal damage to that enemy.
         */
-        if (otherObj.transform.root.TryGetComponent(out EnemyDamage enemy)) {
+        if (otherObj.transform.root.TryGetComponent(out Enemy enemy)) {
             enemy.takeDamage(this.bulletDamage);
         }
     }
