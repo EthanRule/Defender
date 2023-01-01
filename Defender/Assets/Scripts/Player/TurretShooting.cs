@@ -10,16 +10,7 @@ public class TurretShooting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        * Assigning the particle system of the game object. You can do it this way or just drag the particle system directly in the Unity Editor.
-        */
-        this.particleSystem = GetComponent<ParticleSystem>();
 
-        // Access the shape module of the particle system
-        var shapeOfParticle = this.particleSystem.shape;
-        
-        // Randomize the direction which the particles go to.
-        shapeOfParticle.randomDirectionAmount = 1;
     }
 
     // Update is called once per frame
@@ -29,7 +20,7 @@ public class TurretShooting : MonoBehaviour
         * If the user clicks, shoot the gun/particle.
         */
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            particleSystem.Play();
+           
         }
     }
 
